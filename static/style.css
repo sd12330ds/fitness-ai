@@ -1,0 +1,106 @@
+body {
+    font-family: "Segoe UI", Arial;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.panel {
+    position: relative;
+
+    background: white;
+    padding: 20px;
+    padding-top: 45px;   /* ⭐ 放在 padding 後面 */
+
+    border-radius: 10px;
+    flex: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.btn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background: #18a874;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #128c60;
+}
+
+.list {
+    padding-left: 20px;
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+}
+.bar-group label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+}
+
+.bar {
+  width: 100%;
+  height: 18px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 10px;
+}
+.error-box {
+    position: absolute;
+    top: 4px;           /* ⭐ 控制高度就在這 */
+    left: 20px;
+    right: 20px;
+
+    background: #ffecec;
+    color: #c62828;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 1px solid #f5b5b5;
+
+    animation: shake 0.3s ease;
+}
+   
+
+
+.fill.red { background: #ef4444; }
+.fill.green { background: #22c55e; }
+.fill.blue { background: #3b82f6; }
+.fill.yellow { background: #facc15; }

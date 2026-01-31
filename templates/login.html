@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>登入</title>
+<style>
+body {
+    font-family: Arial;
+    background: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.box {
+    background: white;
+    padding: 40px;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+}
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #18a874;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+}
+a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+    <h2>🏋️ 健身飲食管理</h2>
+
+    <form method="post">
+        <input name="username" placeholder="帳號" required>
+        <input type="password" name="password" placeholder="密碼" required>
+        <button>登入</button>
+    </form>
+
+    <a href="/register">註冊新帳號</a>
+</div>
+</body>
+</html>

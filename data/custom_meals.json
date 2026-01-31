@@ -1,0 +1,119 @@
+{
+  "7-11": {
+    "香草雞胸健康餐盒": { "kcal": 420, "protein": 35, "carbs": 45, "fat": 10 },
+    "增肌蛋白餐": { "kcal": 595, "protein": 31, "carbs": 72, "fat": 20 },
+    "21Plus 香草烤雞腿時蔬餐": { "kcal": 434, "protein": 25.8, "carbs": 49.5, "fat": 14.7 },
+    "御飯糰 肉鬆": { "kcal": 254, "protein": 5.2, "carbs": 39.8, "fat": 8.5 },
+    "御飯糰 雙蔬鮪魚飯糰": { "kcal": 221, "protein": 5.0, "carbs": 38.0, "fat": 6.2 },
+    "御飯糰 雞肉飯": { "kcal": 238, "protein": 5.4, "carbs": 42.7, "fat": 5.6 },
+    "爆炒沙茶滷雞胗": { "kcal": 226, "protein": 24.4, "carbs": 5.9, "fat": 11.6 }
+  },
+
+  "全家": {
+    "香烤嫩雞健康餐": { "kcal": 430, "protein": 32, "carbs": 48, "fat": 11 },
+    "舒肥雞胸餐盒": { "kcal": 410, "protein": 36, "carbs": 42, "fat": 9 },
+    "增肌蛋白餐盒": { "kcal": 560, "protein": 40, "carbs": 60, "fat": 15 },
+    "糖燻雞胗 (80g)": { "kcal": 122, "protein": 23.0, "carbs": 0.0, "fat": 7.4 }
+  },
+
+  "波奇波奇": {
+    "Poké Bowl": { "kcal": 500, "protein": 28, "carbs": 65, "fat": 18 },
+    "雞胸碗": { "kcal": 480, "protein": 35, "carbs": 55, "fat": 12 },
+    "鮭魚碗": { "kcal": 520, "protein": 32, "carbs": 60, "fat": 20 }
+  },
+
+  "健身餐": {
+    "雞胸便當": { "kcal": 520, "protein": 40, "carbs": 55, "fat": 12 },
+    "舒肥雞腿便當": { "kcal": 580, "protein": 38, "carbs": 60, "fat": 18 },
+    "牛肉便當": { "kcal": 650, "protein": 42, "carbs": 65, "fat": 22 },
+    "豬里肌便當": { "kcal": 600, "protein": 35, "carbs": 70, "fat": 20 }
+  },
+
+  "一般便當": {
+    "雞腿便當": { "kcal": 750, "protein": 32, "carbs": 90, "fat": 28 },
+    "排骨便當": { "kcal": 820, "protein": 30, "carbs": 95, "fat": 32 },
+    "燒臘便當": { "kcal": 900, "protein": 35, "carbs": 100, "fat": 40 },
+    "控肉便當": { "kcal": 950, "protein": 28, "carbs": 95, "fat": 45 }
+  },
+
+  "自助餐": {
+    "雞胸+飯": { "kcal": 600, "protein": 38, "carbs": 70, "fat": 15 },
+    "雞腿+飯": { "kcal": 720, "protein": 32, "carbs": 80, "fat": 25 },
+    "魚排+飯": { "kcal": 650, "protein": 30, "carbs": 75, "fat": 22 },
+    "豆干蔬菜餐": { "kcal": 480, "protein": 20, "carbs": 65, "fat": 14 }
+  },
+
+  "外食": {
+    "肉燥飯（小碗）": { "kcal": 430, "protein": 14, "carbs": 55, "fat": 18 },
+    "肉燥飯（大碗）": { "kcal": 650, "protein": 21, "carbs": 83, "fat": 27 },
+    "雞絲飯（小碗）": { "kcal": 390, "protein": 22, "carbs": 55, "fat": 10 },
+    "雞絲飯（大碗）": { "kcal": 585, "protein": 33, "carbs": 83, "fat": 15 },
+    "滷雞腿飯": { "kcal": 780, "protein": 33, "carbs": 88, "fat": 28 },
+    "雞排飯": { "kcal": 900, "protein": 35, "carbs": 100, "fat": 40 },
+    "牛肉燴飯": { "kcal": 820, "protein": 34, "carbs": 95, "fat": 30 },
+    "豬排飯": { "kcal": 850, "protein": 32, "carbs": 98, "fat": 35 },
+    "貢丸湯（1碗）": { "kcal": 110, "protein": 7, "carbs": 5, "fat": 7 },
+    "嘴邊肉（100g）": { "kcal": 250, "protein": 20, "carbs": 0, "fat": 20 }
+  },
+
+  "健人餐廚": {
+    "舒肥雞胸健康餐盒": { "kcal": 500, "protein": 38, "carbs": 55, "fat": 12 },
+    "炙烤雞腿健康餐盒": { "kcal": 580, "protein": 35, "carbs": 60, "fat": 18 },
+    "泰式打拋豬健康餐盒": { "kcal": 620, "protein": 32, "carbs": 65, "fat": 20 },
+    "蒲燒鯛魚健康餐盒": { "kcal": 540, "protein": 30, "carbs": 60, "fat": 15 }
+  },
+
+  "貝穀健康餐": {
+    "南洋雞飯 (估算)": { "kcal": 720, "protein": 34, "carbs": 85, "fat": 28 },
+    "嫩雞腿飯 (估算)": { "kcal": 760, "protein": 38, "carbs": 90, "fat": 30 }
+  },
+
+
+  "御品醇": {
+    "舒肥雞胸餐盒 (估算)": { "kcal": 480, "protein": 36, "carbs": 50, "fat": 10 },
+    "日式醬燒雞腿餐盒 (估算)": { "kcal": 550, "protein": 30, "carbs": 55, "fat": 15 }
+  },
+
+  "其他丼飯 / 快餐": {
+    "野餐日 健康餐盒 (估算)": { "kcal": 671, "protein": 35, "carbs": 70, "fat": 18 },
+    "五鮮極 白玉鍋-低脂牛 (估算)": { "kcal": 700, "protein": 48, "carbs": 68, "fat": 25 },
+    "牛小排丼飯 (估算)": { "kcal": 700, "protein": 48, "carbs": 68, "fat": 25 },
+    "牛五花丼飯 (估算)": { "kcal": 1050, "protein": 30, "carbs": 105, "fat": 50 },
+    "牛丼-壽喜燒風 (估算)": { "kcal": 900, "protein": 32, "carbs": 110, "fat": 32 },
+    "照燒雞腿丼飯 (估算)": { "kcal": 900, "protein": 32, "carbs": 110, "fat": 28 },
+    "雞胸丼飯 (估算)": { "kcal": 720, "protein": 45, "carbs": 95, "fat": 12 },
+    "豬排丼飯 (估算)": { "kcal": 1050, "protein": 35, "carbs": 115, "fat": 45 },
+    "炸雞丼飯 (估算)": { "kcal": 1100, "protein": 32, "carbs": 120, "fat": 48 },
+    "炸蝦丼飯 (估算)": { "kcal": 980, "protein": 28, "carbs": 115, "fat": 42 },
+    "親子丼 (估算)": { "kcal": 830, "protein": 35, "carbs": 100, "fat": 42 }
+  },
+
+  "麥當勞": {
+    "大麥克": { "kcal": 563, "protein": 26, "carbs": 45, "fat": 33 },
+    "雙層牛肉吉事堡": { "kcal": 450, "protein": 25, "carbs": 34, "fat": 25 },
+    "牛肉吉事堡": { "kcal": 300, "protein": 15, "carbs": 33, "fat": 13 },
+    "勁辣雞腿堡": { "kcal": 493, "protein": 27, "carbs": 46, "fat": 24 },
+    "麥香雞": { "kcal": 350, "protein": 14, "carbs": 40, "fat": 15 },
+    "麥香魚": { "kcal": 343, "protein": 15, "carbs": 38, "fat": 15 },
+    "麥克雞塊（6塊）": { "kcal": 270, "protein": 15, "carbs": 16, "fat": 16 },
+    "麥克雞塊（10塊）": { "kcal": 450, "protein": 25, "carbs": 27, "fat": 27 },
+    "薯條（小）": { "kcal": 231, "protein": 3, "carbs": 30, "fat": 11 },
+    "薯條（中）": { "kcal": 337, "protein": 4, "carbs": 42, "fat": 16 },
+    "薯條（大）": { "kcal": 498, "protein": 6, "carbs": 63, "fat": 24 },
+    "蛋捲冰淇淋": { "kcal": 160, "protein": 4, "carbs": 24, "fat": 5 },
+    "蘋果派": { "kcal": 240, "protein": 2, "carbs": 34, "fat": 11 }
+  },
+
+  "肯德基": {
+    "咔啦脆雞（腿）": { "kcal": 320, "protein": 26, "carbs": 11, "fat": 20 },
+    "咔啦脆雞（排）": { "kcal": 270, "protein": 24, "carbs": 10, "fat": 16 },
+    "咔啦雞腿堡": { "kcal": 460, "protein": 23, "carbs": 46, "fat": 22 },
+    "花生培根咔啦雞堡": { "kcal": 560, "protein": 27, "carbs": 44, "fat": 33 },
+    "薯條（中）": { "kcal": 300, "protein": 4, "carbs": 40, "fat": 15 },
+    "玉米": { "kcal": 140, "protein": 4, "carbs": 31, "fat": 2 },
+    "咔啦雞腿飯": { "kcal": 720, "protein": 28, "carbs": 95, "fat": 24 },
+    "雙拼雞飯": { "kcal": 900, "protein": 45, "carbs": 95, "fat": 38 },
+    "原味蛋撻": { "kcal": 230, "protein": 4, "carbs": 26, "fat": 12 },
+    "紙包雞（加飯）": { "kcal": 615, "protein": 36, "carbs": 62, "fat": 25 }
+  }
+}

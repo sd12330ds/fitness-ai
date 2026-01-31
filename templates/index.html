@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>健身飲食管理 Web</title>
+
+<style>
+body {
+  font-family: Arial;
+  background:#f6f7f8;
+}
+
+.container {
+  max-width:1100px;
+  margin:auto;
+}
+
+.card {
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  margin:15px;
+  box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+button {
+  padding:12px;
+  width:100%;
+  background:#18a874;
+  color:white;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+input,select {
+  width:100%;
+  padding:10px;
+  margin:6px 0 12px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+hr { margin:20px 0; }
+
+/* ===== 進度條 ===== */
+
+.bar {
+  width:100%;
+  height:18px;
+  background:#e5e7eb;
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:12px;
+}
+
+.fill {
+  height:100%;
+  border-radius:10px;
+}
+
+.red { background:#ef4444; }
+.green { background:#22c55e; }
+.blue { background:#3b82f6; }
+.yellow { background:#facc15; }
+
+.label {
+  font-weight:bold;
+  margin-top:8px;
+}
+</style>
+<link rel="manifest" href="/static/manifest.json">
+<meta name="theme-color" content="#18a874">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 style="text-align:center">🏋️ 健身飲食管理 Web 版</h1>
+
+<div class="grid">
+
+<!-- ================= 左側 ================= -->
+<div class="card">
+
+<form method="post">
+
+{% if error %}
+<div class="error-box">
+    ❌ {{ error }}
+</div>
+{% endif %}
+
+<label>日期</label>
+<input type="date" name="date" value="{{ today }}" onchange="location.href='/?date=' + this.value">
+
+<label>餐別</label>
+<select name="meal">
+  <option>早餐</option>
+  <option>午餐</option>
+  <option>晚餐</option>
+  <option>點心</option>
+</select>
+
+<label>食物（克數計算）</label>
+<input list="foods" name="food" placeholder="例如：雞胸肉">
+<datalist id="foods">
+{% for f in foods %}
+<option value="{{f}}">
+{% endfor %}
+</datalist>
+
+<label>克數</label>
+<input name="grams" value="100">
+
+<button>➕ 新增一般食物</button>
+
+</form>
+
+<hr>
+
+<h3>🍱 自訂餐點</h3>
+
+<label>餐廳</label>
+<select id="brand" onchange="updateMeals()">
+{% for b in brands %}
+<option value="{{b}}">{{b}}</option>
+{% endfor %}
+</select>
+
+<label>餐點</label>
+<select id="meal"></select>
+
+<label>份量比例</label>
+<input id="ratio" value="1">
+
+<button onclick="addCustom()">➕ 新增自訂餐點</button>
+
+
+
+</div>
+
+<!-- ================= 右側 ================= -->
+<div class="card">
+
+<h3>📋 今日飲食清單</h3>
+
+<ul style="padding-left:20px">
+{% for i in logs %}
+<li style="margin-bottom:8px">
+
+  {{ loop.index }}.
+  {{ i.meal }} -
+  {% if i.brand %}
+    【{{ i.brand }}】
+  {% endif %}
+  {{ i.food }}
+
+  {% if i.grams %}
+    ({{ i.grams }} g)
+  {% else %}
+    ({{ i.kcal|round }} kcal)
+  {% endif %}
+
+  <button
+    style="margin-left:10px;
+           padding:4px 8px;
+           background:#ef4444;
+           color:white;
+           border:none;
+           border-radius:6px;
+           cursor:pointer"
+    onclick="deleteLog({{ loop.index0 }})">
+    ❌
+  </button>
+
+</li>
+{% endfor %}
+</ul>
+
+<hr>
+
+<h3>📊 今日總營養</h3>
+
+<div class="label">
+🔥 熱量 {{ total.kcal|round(1) }} / 2650 kcal
+</div>
+<div class="bar">
+  <div class="fill red"
+       style="width: {{ (total.kcal/2650*100)|round(1) }}%">
+  </div>
+</div>
+
+<div class="label">
+💪 蛋白質 {{ total.protein|round(1) }} / 130 g
+</div>
+<div class="bar">
+  <div class="fill green"
+       style="width: {{ (total.protein/130*100)|round(1) }}%">
+  </div>
+</div>
+
+<div class="label">
+🍚 碳水 {{ total.carbs|round(1) }} / 350 g
+</div>
+<div class="bar">
+  <div class="fill blue"
+       style="width: {{ (total.carbs/350*100)|round(1) }}%">
+  </div>
+</div>
+
+<div class="label">
+🥑 脂肪 {{ total.fat|round(1) }} / 70 g
+</div>
+<div class="bar">
+  <div class="fill yellow"
+       style="width: {{ (total.fat/70*100)|round(1) }}%">
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+const customs = {{ customs | tojson }};
+
+function updateMeals(){
+  const b = document.getElementById("brand").value;
+  const sel = document.getElementById("meal");
+  sel.innerHTML = "";
+  Object.keys(customs[b]).forEach(m=>{
+    const o=document.createElement("option");
+    o.value=m; o.textContent=m;
+    sel.appendChild(o);
+  })
+}
+updateMeals();
+
+function addCustom(){
+  fetch("/add_custom",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      brand: document.getElementById("brand").value,
+      meal: document.getElementById("meal").value,
+      ratio: document.getElementById("ratio").value,
+      date: "{{ today }}",
+      meal_type: document.querySelector("select[name='meal']").value
+    })
+  }).then(()=>location.reload());
+}
+
+function deleteLog(index){
+  if(!confirm("確定要刪除這筆紀錄？")) return;
+
+  fetch("/delete", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      date: "{{ today }}",
+      index: index
+    })
+  }).then(()=>location.reload());
+}
+
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/static/service-worker.js");
+}
+</script>
+
+
+</body>
+</html>
