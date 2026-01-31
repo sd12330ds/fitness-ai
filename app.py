@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, jsonify, session
 import json, os, hashlib
 from datetime import date
-from pyngrok import ngrok
+
 
 # =========================
 # Flask
@@ -259,8 +259,3 @@ def delete_log():
 if __name__ == "__main__":
     app.run()
 
-
-
-
-public_url = ngrok.connect(5000)
-print("🌍 公開網址：", public_url)
